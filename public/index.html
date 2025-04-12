@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneLife - Refreshing Drinks for Every Occasion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>One<span>Life</span></h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="active"><span>Home</span></a></li>
+                    <li><a href="products.html"><span>Products</span></a></li>
+                    <li><a href="QNT.html"><span>Quality & Testing</span></a></li>
+                    <li><a href="payment.html"><span>Order Now</span></a></li>
+                    <li><a href="team.html"><span>Our Team</span></a></li>
+                    <li><a href="contact.html"><span>Contact</span></a></li>
+                </ul>
+            </div>
+            <div class="cart-icon">
+                <a href="payment.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Refresh Your World</h1>
+                <p>Experience the ultimate taste sensation with our premium beverages</p>
+                <a href="products.html" class="btn">Explore Products</a>
+            </div>
+            <div class="hero-video-container">
+                <video autoplay muted loop class="hero-video">
+                    <source src="videos/videoplayback.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Animated Slider Section -->
+        <section class="slider-section">
+            <h2 class="section-title">Featured Collections</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <div class="slide-content">
+                            <img src="images/imlii.png" alt="Premium Collection">
+                            <div class="slide-info">
+                                <h3>Premium Collection</h3>
+                                <p>Our finest selection of luxury beverages</p>
+                                <a href="products.html" class="btn-small">View Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <img src="images/PHOTO-2024-12-09-14-58-45.jpg" alt="Summer Specials">
+                            <div class="slide-info">
+                                <h3>Summer Specials</h3>
+                                <p>Refreshing drinks perfect for hot days</p>
+                                <a href="products.html" class="btn-small">View Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <img src="images/lime.png" alt="Organic Selection">
+                            <div class="slide-info">
+                                <h3>Organic Selection</h3>
+                                <p>Natural ingredients, exceptional taste</p>
+                                <a href="products.html" class="btn-small">View Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <img src="images/orange-copy.png" alt="Limited Edition">
+                            <div class="slide-info">
+                                <h3>Limited Edition</h3>
+                                <p>Exclusive flavors for a limited time</p>
+                                <a href="products.html" class="btn-small">View Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots"></div>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <h2 class="section-title">New Trending Products</h2>
+            <div class="products-container">
+                <div class="product-card cardLinks" data-aos="fade-up">
+                    <div class="product-image">
+                        <img src="https://xkqsunbhlpuyodvqsclo.supabase.co/storage/v1/object/sign/one-life-images/pink.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJvbmUtbGlmZS1pbWFnZXMvcGluay5wbmciLCJpYXQiOjE3NDQwNDk2ODksImV4cCI6MTc3NTU4NTY4OX0.hc0XaSIJNy967JsOKlj4M_0jUhkcSgG4wlP4Jq5zKLY" alt="Citrus Splash">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ginseng Pink</h3>
+                        <p>A refreshing blend of citrus flavors</p>
+                        <span class="price">$3.99</span>
+                        
+                    </div>
+                </div>
+                <div class="product-card cardLinks" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="https://xkqsunbhlpuyodvqsclo.supabase.co/storage/v1/object/sign/one-life-images/ginseng.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJvbmUtbGlmZS1pbWFnZXMvZ2luc2VuZy5wbmciLCJpYXQiOjE3NDQwNDk2NzQsImV4cCI6MTc3NTU4NTY3NH0.JBY50F8ZXfJQY2JzTTPbV-PkL5NMUDr214wRuYlVU0w" alt="Berry Blast">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ginseng black</h3>
+                        <p>Sweet and tangy berry explosion</p>
+                        <span class="price">$5.99</span>
+                        
+                    </div>
+                </div>
+                <div class="product-card cardLinks" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-image">
+                        <img src="https://xkqsunbhlpuyodvqsclo.supabase.co/storage/v1/object/sign/one-life-images/imli.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJvbmUtbGlmZS1pbWFnZXMvaW1saS5wbmciLCJpYXQiOjE3NDQwNDk3MDcsImV4cCI6MTc3NTU4NTcwN30.vgquXRr9QnDmHoH87eQJby3R2UqxBgSlqM5pvRec8sA" alt="Tropical Paradise">
+                    </div>
+                    <div class="product-info">
+                        <h3>Imli one</h3>
+                        <p>Exotic tropical fruit medley</p>
+                        <span class="price">$2.99</span>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <a href="products.html" class="btn" data-aos="fade-up" data-aos-delay="600">View All Products</a>
+            </div>
+        </section>
+
+        <!-- About Section with Parallax -->
+        <section class="about-section parallax">
+            <div class="about-content">
+                <h2 data-aos="fade-up">Our Story</h2>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    Founded in 2010, OneLife has been crafting premium drinks using only the finest ingredients. 
+                    Our commitment to quality and innovation has made us a leader in the beverage industry.
+                </p>
+                <p data-aos="fade-up" data-aos-delay="400">
+                    We source our ingredients from sustainable farms around the world, ensuring that every sip 
+                    not only tastes amazing but also supports responsible farming practices.
+                </p>
+                <a href="team.html" class="btn" data-aos="fade-up" data-aos-delay="600">Meet Our Team</a>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive offers and updates on new products.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+                <div id="newsletter-message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>OneLife</h3>
+                <p>Refreshing drinks for every occasion.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="payment.html">Order Now</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Beverage St, Flavor City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@onelife.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9am - 6pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 OneLife. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="home.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>

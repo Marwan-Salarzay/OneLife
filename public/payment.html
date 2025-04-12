@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Beverage World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <h1>One<span>Life</span></h1>
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="products.html"><span>Products</span></a></li>
+                <li><a href="QNT.html"><span>Quality & Testing</span></a></li>
+                <li><a href="payment.html" class="active"><span>Order Now</span></a></li>
+                <li><a href="team.html"><span>Our Team</span></a></li>
+                <li><a href="contact.html"><span>Contact</span></a></li>
+            </ul>
+        </div>
+        <div class="cart-icon">
+            <a href="payment.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+        </div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <!-- Checkout Hero Section -->
+        <section class="checkout-hero">
+            <div class="checkout-hero-content">
+                <h1 class="fade-in">Checkout</h1>
+                <p class="fade-in delay-1">Complete your purchase</p>
+            </div>
+        </section>
+
+        <!-- Checkout Progress -->
+        <section class="checkout-progress">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="checkout-progress-bar"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Cart</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Shipping</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Content -->
+        <section class="checkout-content">
+            <div class="checkout-container">
+                <!-- Step 1: Cart -->
+                <div class="checkout-step active" id="step-1">
+                    <h2>Your Cart</h2>
+                    <div class="cart-items">
+                        
+                    </div>
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>PKR 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>PKR 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span>PKR 50</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>PKR 50</span>
+                        </div>
+                    </div>
+                    <div class="checkout-actions">
+                        <a href="products.html" class="btn-outline">Continue Shopping</a>
+                        <button class="btn next-step" data-next="2">Proceed to Shipping</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Shipping -->
+                <div class="checkout-step" id="step-2">
+                    <h2>Shipping Information</h2>
+                    <form id="shipping-form" class="checkout-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State/Province</label>
+                                <input type="text" id="state" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zip">Zip/Postal Code</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="PK">Pakistan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-method">Shipping Method</label>
+                            <div class="shipping-options">
+                                <div class="shipping-option">
+                                    <input type="radio" id="standard" name="shipping-method" value="standard" checked>
+                                    <label for="standard">
+                                        <div class="option-details">
+                                            <span class="option-name">Standard Shipping</span>
+                                            <span class="option-description">3-5 business days</span>
+                                        </div>
+                                        <span class="option-price">$4.99</span>
+                                    </label>
+                                </div>
+                                <div class="shipping-option">
+                                    <input type="radio" id="express" name="shipping-method" value="express">
+                                    <label for="express">
+                                        <div class="option-details">
+                                            <span class="option-name">Express Shipping</span>
+                                            <span class="option-description">1-2 business days</span>
+                                        </div>
+                                        <span class="option-price">$9.99</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="checkout-actions">
+                        <button class="btn-outline prev-step" data-prev="1">Back to Cart</button>
+                        <button class="btn next-step" data-next="3">Continue to Payment</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div class="checkout-step" id="step-3">
+                    <h2>Payment Information</h2>
+                    <form id="payment-form" class="checkout-form">
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                <label for="credit-card">Credit Card</label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="paypal" name="payment-method" value="paypal">
+                                <label for="COD">Cash On Delivery</label>
+                            </div>
+                        </div>
+
+                        <div id="credit-card-form">
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <div class="card-input-container">
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                    <div class="card-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                        <i class="fab fa-cc-discover"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-name">Cardholder Name</label>
+                                    <input type="text" id="card-name" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date">Expiry Date</label>
+                                    <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="paypal-form" style="display: none;">
+                            <p style="color: black; font-weight:bold; font-size: large;">Click <b>' Place Order '</b> to Continue!</p>
+                        </div>
+
+                        <div id="billing-address-form" style="display: none;">
+                            <!-- Billing address form fields (hidden by default) -->
+                        </div>
+                    </form>
+                    <div class="checkout-actions">
+                        <button class="btn-outline prev-step" data-prev="2">Back to Shipping</button>
+                        <button class="btn next-step" data-next="4">Place Order</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Confirmation -->
+                <div class="checkout-step" id="step-4">
+                    <div class="confirmation-content">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Thank You for Your Order!</h2>
+                        <p>Your order has been placed successfully.</p>
+                        <div class="order-details">
+                            <!-- items will come here -->
+                        </div>
+                        <div class="confirmation-actions">
+                            <a href="index.html" class="btn-outline">Continue Shopping</a>
+                            <button class="btn" id="download-receipt">Download Receipt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Beverage World</h3>
+                <p>Refreshing drinks for every occasion.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="payment.html">Order Now</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Beverage St, Flavor City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="30595e565f705255465542515755475f425c541e535f5d">[email&#160;protected]</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9am - 6pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Beverage World. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>
+

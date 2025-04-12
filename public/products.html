@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - OneLife</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <h1>One<span>Life</span></h1>
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="products.html" class="active"><span>Products</span></a></li>
+                <li><a href="QNT.html"><span>Quality & Testing</span></a></li>
+                <li><a href="payment.html"><span>Order Now</span></a></li>
+                <li><a href="team.html"><span>Our Team</span></a></li>
+                <li><a href="contact.html"><span>Contact</span></a></li>
+            </ul>
+        </div>
+        <div class="cart-icon">
+            <a href="payment.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+        </div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <!-- Products Hero Section -->
+        <section class="products-hero">
+            <img src="images/mainimg1.jpg" alt="">
+            <div class="products-hero-content">
+                <h1 class="fade-in">Our Products</h1>
+                <p class="fade-in delay-1">Discover our range of refreshing beverages</p>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-grid">
+            <h2 class="section-title">All Products</h2>
+            <div class="products-container" id="products-container">
+                <!-- Product cards will be dynamically generated here -->
+            </div>
+        </section>
+
+        <!-- Product Modal -->
+        <div class="product-modal" id="product-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-product-details">
+                    <div class="modal-product-image">
+                        <img id="modal-image" src="/placeholder.svg" alt="Product Image">
+                    </div>
+                    <div class="modal-product-info">
+                        <h2 id="modal-title"></h2>
+                        <h3 id="modal-liters"></h3>
+                        <p id="modal-description"></p>
+                        <div class="modal-product-meta">
+                            <span class="modal-category" id="modal-category"></span>
+                            <span class="modal-price" id="modal-price"></span>
+                        </div>
+                        <div class="modal-product-actions">
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="number" value="1" min="1" max="99" id="product-quantity">
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="btn add-to-cart-btn">Add to Cart</button>
+
+                        </div>
+                        <div class="modal-product-details-tabs">
+                            <div class="tabs">
+                                <button class="tab-btn active" data-tab="ingredients">Ingredients</button>
+                                <button class="tab-btn" data-tab="nutrition">Nutrition Facts</button>
+                                <button class="tab-btn" data-tab="reviews">Reviews</button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="ingredients">
+                                    <p>Carbonated Water, High Fructose Corn Syrup, Natural Flavors, Citric Acid, Sodium Citrate, Caffeine.</p>
+                                </div>
+                                <div class="tab-pane" id="nutrition">
+                                    <table class="nutrition-table">
+                                        <tr>
+                                            <th>Calories</th>
+                                            <td>150</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total Fat</th>
+                                            <td>0g</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Sodium</th>
+                                            <td>30mg</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total Carbohydrates</th>
+                                            <td>39g</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Sugars</th>
+                                            <td>39g</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Protein</th>
+                                            <td>0g</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="tab-pane" id="reviews">
+                                    <div class="review">
+                                        <div class="review-header">
+                                            <span class="reviewer">John D.</span>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+                                        <p>Great taste! Refreshing and not too sweet.</p>
+                                    </div>
+                                    <div class="review">
+                                        <div class="review-header">
+                                            <span class="reviewer">Sarah M.</span>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p>My favorite drink! I buy it every week.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Beverage World</h3>
+                <p>Refreshing drinks for every occasion.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="payment.html">Order Now</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Beverage St, Flavor City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="462f2820290624233023342721233129342a226825292b">[email&#160;protected]</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9am - 6pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OneLife. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
+

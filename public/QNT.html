@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Testing</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for the cart icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-blue: #1e88e5;
+            --dark-blue: #0d47a1;
+            --light-blue: #bbdefb;
+            --grey: #78909c;
+            --light-grey: #eceff1;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-grey);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .logo a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .logo span {
+            color: var(--light-blue);
+            position: relative;
+            display: inline-block;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .nav-links {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links ul {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-links li {
+            position: relative;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+            padding: 10px 15px;
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--light-blue);
+        }
+        
+        .cart-icon {
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        .cart-icon a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive Navbar */
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .cart-icon {
+                margin-right: 50px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--dark-blue);
+                text-align: center;
+                transition: all 0.3s ease;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links ul {
+                flex-direction: column;
+                padding: 20px 0;
+                width: 100%;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                padding: 15px;
+                display: inline-block;
+                width: 80%;
+                border-radius: 5px;
+            }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .water-waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23eceff1" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,186.7C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .intro h2 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+        
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: var(--grey);
+        }
+        
+        /* Testing Methods Section */
+        .testing-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .method-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8) translateY(50px);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        opacity 0.6s ease,
+                        box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .method-card.visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            animation: popEffect 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes popEffect {
+            0% {
+                transform: scale(0.8) translateY(50px);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.05) translateY(-10px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .method-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .method-icon {
+            height: 120px;
+            background-color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .method-icon::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+            opacity: 0.3;
+            top: -25%;
+            left: -25%;
+            animation: pulse 3s infinite;
+        }
+        
+        .method-card.visible .method-icon {
+            animation: iconPop 0.5s 0.3s forwards;
+        }
+        
+        @keyframes iconPop {
+            0% { transform: scale(0.9); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(0.8); opacity: 0.3; }
+        }
+        
+        .method-content {
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .method-card.visible .method-content {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.4s;
+        }
+        
+        .method-content h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .method-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-blue);
+            transition: width 0.6s ease;
+        }
+        
+        .method-card.visible .method-content h3::after {
+            width: 50px;
+            transition-delay: 0.6s;
+        }
+        
+        .method-content p {
+            color: var(--grey);
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            transform: rotate(180deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23eceff1" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,186.7C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .testing-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>One<span>Life</span></h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html"><span>Home</span></a></li>
+                    <li><a href="products.html"><span>Products</span></a></li>
+                    <li><a href="QNT.html" class="active"><span>Quality & Testing</span></a></li>
+                    <li><a href="payment.html"><span>Order Now</span></a></li>
+                    <li><a href="team.html"><span>Our Team</span></a></li>
+                    <li><a href="contact.html"><span>Contact</span></a></li>
+                </ul>
+            </div>
+            <div class="cart-icon">
+                <a href="payment.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1>Advanced Water Quality Testing</h1>
+            <p class="subtitle">Our rigorous 9-step testing process ensures the highest quality mineral water and beverages</p>
+        </div>
+        <div class="water-waves"></div>
+    </header>
+    
+    <main class="container">
+        <section class="intro animate-fade-in">
+            <h2>Our Quality Assurance Process</h2>
+            <p>At our state-of-the-art facility, we employ a comprehensive 9-step testing methodology to ensure that every drop of water meets the highest standards of purity and quality. Our advanced testing procedures guarantee that our products are not only safe but also deliver optimal taste and mineral content.</p>
+        </section>
+        
+        <section class="testing-methods">
+            <!-- Method 1 -->
+            <div class="method-card" data-step="1">
+                <div class="method-icon">1</div>
+                <div class="method-content">
+                    <h3>Chlorination</h3>
+                    <p>Our chlorination process effectively eliminates harmful bacteria and pathogens, ensuring the water is safe for consumption while maintaining its natural properties.</p>
+                </div>
+            </div>
+            
+            <!-- Method 2 -->
+            <div class="method-card" data-step="2">
+                <div class="method-icon">2</div>
+                <div class="method-content">
+                    <h3>Micro-filtration</h3>
+                    <p>Using advanced micro-filtration technology, we remove microscopic particles and impurities down to 0.1 microns, preserving the water's clarity and purity.</p>
+                </div>
+            </div>
+            
+            <!-- Method 3 -->
+            <div class="method-card" data-step="3">
+                <div class="method-icon">3</div>
+                <div class="method-content">
+                    <h3>Sand Vessels Filtration</h3>
+                    <p>Our multi-layer sand filtration system effectively removes suspended solids and organic matter, improving water clarity and taste.</p>
+                </div>
+            </div>
+            
+            <!-- Method 4 -->
+            <div class="method-card" data-step="4">
+                <div class="method-icon">4</div>
+                <div class="method-content">
+                    <h3>Carbon Vessel Filtration</h3>
+                    <p>Activated carbon filtration removes chlorine, organic compounds, and unwanted odors, enhancing the water's taste profile and purity.</p>
+                </div>
+            </div>
+            
+            <!-- Method 5 -->
+            <div class="method-card" data-step="5">
+                <div class="method-icon">5</div>
+                <div class="method-content">
+                    <h3>Reverse Osmosis</h3>
+                    <p>Our state-of-the-art reverse osmosis system removes dissolved solids, contaminants, and impurities at the molecular level, ensuring exceptional purity.</p>
+                </div>
+            </div>
+            
+            <!-- Method 6 -->
+            <div class="method-card" data-step="6">
+                <div class="method-icon">6</div>
+                <div class="method-content">
+                    <h3>Mineral Dosing</h3>
+                    <p>We carefully reintroduce essential minerals in precise amounts to create the perfect mineral balance for optimal taste and health benefits.</p>
+                </div>
+            </div>
+            
+            <!-- Method 7 -->
+            <div class="method-card" data-step="7">
+                <div class="method-icon">7</div>
+                <div class="method-content">
+                    <h3>Ultra Filtration</h3>
+                    <p>Ultra filtration technology removes viruses, bacteria, and the finest particles while preserving beneficial minerals for a superior product.</p>
+                </div>
+            </div>
+            
+            <!-- Method 8 -->
+            <div class="method-card" data-step="8">
+                <div class="method-icon">8</div>
+                <div class="method-content">
+                    <h3>PH Level Balancing</h3>
+                    <p>We precisely adjust the pH levels to create a perfectly balanced water that is neither too acidic nor too alkaline for optimal taste and health.</p>
+                </div>
+            </div>
+            
+            <!-- Method 9 -->
+            <div class="method-card" data-step="9">
+                <div class="method-icon">9</div>
+                <div class="method-content">
+                    <h3>Ionization</h3>
+                    <p>Our ionization process enhances the water's molecular structure, improving hydration efficiency and creating a smoother, more refreshing taste.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="footer-content">
+            <h3>Committed to Quality</h3>
+            <p>Our dedication to excellence ensures that every product meets the highest standards of purity and taste.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fix 1: Add hamburger menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                // Toggle active class for hamburger animation
+                hamburger.classList.toggle('active');
+                // Toggle active class for nav menu
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Method cards animation
+            const methodCards = document.querySelectorAll('.method-card');
+            
+            // Create Intersection Observer with options
+            const options = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.2 // 20% of the element must be visible
+            };
+            
+            // Function to handle when elements become visible
+            const handleIntersect = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Get the step number from data attribute
+                        const step = parseInt(entry.target.dataset.step);
+                        
+                        // Add visible class with a delay based on step number
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, (step - 1) * 200); // 200ms delay between each card
+                        
+                        // Stop observing once it's visible
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            
+            // Create the observer
+            const observer = new IntersectionObserver(handleIntersect, options);
+            
+            // Start observing each method card
+            methodCards.forEach(card => {
+                observer.observe(card);
+                
+                // Add hover effects
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+                    
+                    // Get the icon element
+                    const icon = this.querySelector('.method-icon');
+                    icon.style.transform = 'scale(1.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                    
+                    // Get the icon element
+                    const icon = this.querySelector('.method-icon');
+                    icon.style.transform = '';
+                });
+            });
+            
+            // Add water ripple effect on click
+            methodCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Create ripple element
+                    const ripple = document.createElement('div');
+                    ripple.className = 'ripple';
+                    
+                    // Position the ripple where clicked
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Style the ripple
+                    ripple.style.cssText = `
+                        position: absolute;
+                        background: rgba(255, 255, 255, 0.7);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        width: 5px;
+                        height: 5px;
+                        top: ${y}px;
+                        left: ${x}px;
+                        transform: translate(-50%, -50%);
+                        animation: ripple 0.6s linear;
+                    `;
+                    
+                    // Add ripple to card
+                    this.appendChild(ripple);
+                    
+                    // Remove ripple after animation
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+            
+            // Add ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    0% {
+                        width: 0;
+                        height: 0;
+                        opacity: 0.5;
+                    }
+                    100% {
+                        width: 500px;
+                        height: 500px;
+                        opacity: 0;
+                    }
+                }
+                
+                /* Fix 2: Add hamburger animation styles */
+                .hamburger.active .bar:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+                
+                .hamburger.active .bar:nth-child(2) {
+                    opacity: 0;
+                }
+                
+                .hamburger.active .bar:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded',()=>{
+  const cart = JSON.parse(localStorage.getItem("count")) || []
+  document.querySelector('.cart-count').textContent = `${cart}` || `0`
+  console.log(cart);
+
+})
+
+    </script>
+</body>
+</html>

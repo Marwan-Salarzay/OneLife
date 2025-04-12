@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Beverage World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <h1>One<span>Life</span></h1>
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="products.html"><span>Products</span></a></li>
+                <li><a href="QNT.html"><span>Quality & Testing</span></a></li>
+                <li><a href="payment.html"><span>Order Now</span></a></li>
+                <li><a href="team.html" class="active"><span>Our Team</span></a></li>
+                <li><a href="contact.html"><span>Contact</span></a></li>
+            </ul>
+        </div>
+        <div class="cart-icon">
+            <a href="payment.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+        </div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <!-- Team Hero Section -->
+        <section class="team-hero">
+            <div class="team-hero-content">
+                <h1 class="fade-in">Meet Our Team</h1>
+                <p class="fade-in delay-1">The passionate people behind Beverage World</p>
+            </div>
+        </section>
+
+        <!-- Team Introduction -->
+        <section class="team-intro">
+            <div class="intro-content">
+                <h2 data-aos="fade-up">Our Story</h2>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    At Beverage World, we're more than just a beverage company. We're a team of passionate individuals 
+                    dedicated to creating refreshing drinks that bring joy to people's lives. Our journey began in 2010 
+                    with a simple mission: to craft premium beverages using only the finest ingredients.
+                </p>
+                <p data-aos="fade-up" data-aos-delay="400">
+                    Today, our diverse team continues to innovate and push the boundaries of what's possible in the 
+                    beverage industry. From our flavor scientists to our sustainability experts, each member brings 
+                    unique skills and perspectives that make Beverage World special.
+                </p>
+            </div>
+            <div class="team-stats">
+                <h2 data-aos="fade-up">Company Growth</h2>
+                <div class="chart-container" data-aos="fade-up" data-aos-delay="200">
+                    <canvas id="growth-chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="leadership-team">
+            <h2 class="section-title">Leadership Team</h2>
+            <div class="team-members">
+                <div class="team-member" data-aos="fade-up">
+                    <div class="member-image">
+                        <img src="assets/ceo.jpg" alt="Sarah Johnson - CEO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <span class="member-title">Chief Executive Officer</span>
+                        <p>
+                            Sarah founded Beverage World with a vision to create drinks that are both delicious and 
+                            sustainable. With over 20 years of experience in the beverage industry, she leads our 
+                            company with passion and innovation.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-image">
+                        <img src="assets/cto.jpg" alt="Michael Chen - CTO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Chen</h3>
+                        <span class="member-title">Chief Technology Officer</span>
+                        <p>
+                            Michael oversees all technological innovations at Beverage World. His expertise in 
+                            food science and production technology has revolutionized our manufacturing processes, 
+                            making them more efficient and environmentally friendly.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                    <div class="member-image">
+                        <img src="assets/cmo.jpg" alt="Emma Rodriguez - CMO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Emma Rodriguez</h3>
+                        <span class="member-title">Chief Marketing Officer</span>
+                        <p>
+                            Emma brings creativity and strategic thinking to our marketing efforts. Her innovative 
+                            campaigns have helped Beverage World become a household name and connect with customers 
+                            around the world.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department Teams -->
+        <section class="department-teams">
+            <h2 class="section-title">Our Departments</h2>
+            <div class="departments-container">
+                <div class="department" data-aos="fade-up">
+                    <div class="department-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research & Development</h3>
+                    <p>
+                        Our R&D team is constantly experimenting with new flavors and ingredients to create 
+                        innovative beverages that surprise and delight our customers.
+                    </p>
+                    <div class="team-gallery">
+                        <img src="assets/team-rd-1.jpg" alt="R&D Team Member">
+                        <img src="assets/team-rd-2.jpg" alt="R&D Team Member">
+                        <img src="assets/team-rd-3.jpg" alt="R&D Team Member">
+                        <span class="more-members">+4</span>
+                    </div>
+                </div>
+                <div class="department" data-aos="fade-up" data-aos-delay="200">
+                    <div class="department-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Production</h3>
+                    <p>
+                        Our production team ensures that every bottle of Beverage World meets our high standards 
+                        for quality and taste, using state-of-the-art equipment and processes.
+                    </p>
+                    <div class="team-gallery">
+                        <img src="assets/team-prod-1.jpg" alt="Production Team Member">
+                        <img src="assets/team-prod-2.jpg" alt="Production Team Member">
+                        <img src="assets/team-prod-3.jpg" alt="Production Team Member">
+                        <span class="more-members">+6</span>
+                    </div>
+                </div>
+                <div class="department" data-aos="fade-up" data-aos-delay="400">
+                    <div class="department-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>
+                        Our sustainability team works to minimize our environmental impact and ensure that our 
+                        practices are responsible and ethical, from sourcing to packaging.
+                    </p>
+                    <div class="team-gallery">
+                        <img src="assets/team-sust-1.jpg" alt="Sustainability Team Member">
+                        <img src="assets/team-sust-2.jpg" alt="Sustainability Team Member">
+                        <img src="assets/team-sust-3.jpg" alt="Sustainability Team Member">
+                        <span class="more-members">+3</span>
+                    </div>
+                </div>
+                <div class="department" data-aos="fade-up" data-aos-delay="600">
+                    <div class="department-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Marketing</h3>
+                    <p>
+                        Our marketing team brings our brand to life through creative campaigns, engaging social 
+                        media content, and strategic partnerships that connect with our audience.
+                    </p>
+                    <div class="team-gallery">
+                        <img src="assets/team-mkt-1.jpg" alt="Marketing Team Member">
+                        <img src="assets/team-mkt-2.jpg" alt="Marketing Team Member">
+                        <img src="assets/team-mkt-3.jpg" alt="Marketing Team Member">
+                        <span class="more-members">+5</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Values -->
+        <section class="team-values parallax">
+            <div class="values-content">
+                <h2 data-aos="fade-up">Our Values</h2>
+                <div class="values-container">
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Quality</h3>
+                        <p>We never compromise on the quality of our ingredients or our processes. Every beverage we create meets the highest standards of taste and safety.</p>
+                    </div>
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="value-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Sustainability</h3>
+                        <p>We are committed to minimizing our environmental impact through responsible sourcing, eco-friendly packaging, and sustainable production methods.</p>
+                    </div>
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>We constantly push the boundaries of what's possible in the beverage industry, exploring new flavors, technologies, and experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Team -->
+        <section class="join-team">
+            <div class="join-content">
+                <h2 data-aos="fade-up">Join Our Team</h2>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    We're always looking for passionate, talented individuals to join the Beverage World family. 
+                    If you're excited about creating amazing beverages and want to be part of a dynamic, 
+                    innovative team, we'd love to hear from you.
+                </p>
+                <div class="open-positions" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Current Openings</h3>
+                    <div class="position-card">
+                        <h4>Flavor Scientist</h4>
+                        <p>Join our R&D team to develop exciting new beverage flavors.</p>
+                        <a href="#" class="btn-small">Apply Now</a>
+                    </div>
+                    <div class="position-card">
+                        <h4>Marketing Specialist</h4>
+                        <p>Help us tell the Beverage World story through creative marketing campaigns.</p>
+                        <a href="#" class="btn-small">Apply Now</a>
+                    </div>
+                    <div class="position-card">
+                        <h4>Sustainability Coordinator</h4>
+                        <p>Lead initiatives to make our operations more environmentally friendly.</p>
+                        <a href="#" class="btn-small">Apply Now</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn" data-aos="fade-up" data-aos-delay="600">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Beverage World</h3>
+                <p>Refreshing drinks for every occasion.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="payment.html">Order Now</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Beverage St, Flavor City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="640d0a020b240601120116050301130b1608004a070b09">[email&#160;protected]</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9am - 6pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Beverage World. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <script src="team.js"></script>
+</body>
+</html>
+
