@@ -38,7 +38,11 @@ dotenv.config()
 
 const app = express();
 const port = process.env.PORT;
-app.use(cors());
+app.use(cors({
+  origin: 'https://one-life-theta.vercel.app/', // Replace with your actual frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
 app.use(express.json());
 
 
