@@ -2001,7 +2001,7 @@ async function processOrderFromLocalStorage(localStorageName) {
       console.error("No order data found in localStorage")
       return
     }
-    const response = await fetch("http://localhost:3000/api/email", {
+    const response = await fetch("https://one-life-theta.vercel.app/api/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -2034,7 +2034,7 @@ async function addToDataBase(localStorageName){
       console.error("No order data found in localStorage")
       return
     }
-    const response = await fetch(`http://localhost:3000/api/${localStorageName}`, {
+    const response = await fetch(`https://one-life-theta.vercel.app/api/${localStorageName}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
