@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', fetchUsers);
 async function fetchUsers() {
     try {
         // Make sure to use http instead of https for localhost
-        const response = await fetch('http://localhost:3000/api/users');
+        const response = await fetch('https://one-life-theta.vercel.app/api/users');
         if (!response.ok) throw new Error('Network response was not ok');
         const users = await response.json();
         console.log(users);
