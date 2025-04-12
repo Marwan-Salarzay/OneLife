@@ -2016,11 +2016,11 @@ async function processOrderFromLocalStorage(localStorageName) {
       alert("Your order has been placed successfully!")
     } else {
       console.error("Failed to process order:", result.message)
-      alert("There was an error processing your order. Please try again.")
+      // alert("There was an error processing your order. Please try again.")
     }
   } catch (error) {
     console.error("Error sending order data:", error)
-    alert("There was an error processing your order. Please try again.")
+    // alert("There was an error processing your order. Please try again.")
   }
   addToDataBase(localStorageName)
 }
@@ -2048,11 +2048,11 @@ async function addToDataBase(localStorageName){
       alert("Your order has been placed successfully!")
     } else {
       console.error("Failed to process order:", result.message)
-      alert("There was an error processing your order. Please try again.")
+      // alert("There was an error processing your order. Please try again.")
     }
   } catch (error) {
     console.error("Error sending order data:", error)
-    alert("There was an error processing your order. Please try again.")
+    // alert("There was an error processing your order. Please try again.")
   }
 
 }
