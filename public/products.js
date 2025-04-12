@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!productsContainer) return
 
     // In a real application, you would fetch this data from your server
-    const response = await fetch("http://localhost:3000/api/Products")
+    const response = await fetch("/api/Products")
     if (!response.ok) throw new Error("Network response was not ok")
     products = await response.json()
 
